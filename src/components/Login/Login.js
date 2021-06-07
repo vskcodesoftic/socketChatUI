@@ -24,7 +24,7 @@ const Login = () => {
 
     //Emits the login event and if successful redirects to chat and saves user data
     const handleClick = () => {
-        socket.emit('login', { name, room , notificationId}, error => {
+        socket.emit('login', { name, room , notificationId }, error => {
             if (error) {
                 console.log(error)
                 return toast({
