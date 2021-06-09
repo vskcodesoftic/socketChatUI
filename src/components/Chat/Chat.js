@@ -30,6 +30,10 @@ const Chat = () => {
             setMessages(messages => [...messages, msg]);
         })
 
+        
+        socket.emit('clientDetails',{ userId: 'A custom event named testerEvent!', name : 'shiva'});
+    
+
         socket.on("notification", notif => {
             toast({
                 position: "top",
@@ -42,6 +46,8 @@ const Chat = () => {
         })
     }, [socket, toast])
 
+
+    // chat box
 
     const handleSendMessage = () => {
         socket.emit('sendMessage', message, () => setMessage(''))
